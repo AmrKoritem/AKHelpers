@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D94CF1D299B9EFD00BEFDD0 /* Calls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF14299B9EFC00BEFDD0 /* Calls.swift */; };
+		1D94CF1E299B9EFD00BEFDD0 /* EdgeInsets+Navigationbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF15299B9EFC00BEFDD0 /* EdgeInsets+Navigationbar.swift */; };
+		1D94CF1F299B9EFD00BEFDD0 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF16299B9EFC00BEFDD0 /* Gradient.swift */; };
+		1D94CF20299B9EFD00BEFDD0 /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF17299B9EFC00BEFDD0 /* Swizzle.swift */; };
+		1D94CF21299B9EFD00BEFDD0 /* TableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF18299B9EFC00BEFDD0 /* TableViews.swift */; };
+		1D94CF22299B9EFD00BEFDD0 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF19299B9EFC00BEFDD0 /* Navigation.swift */; };
+		1D94CF23299B9EFD00BEFDD0 /* CollectionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF1A299B9EFD00BEFDD0 /* CollectionViews.swift */; };
+		1D94CF24299B9EFD00BEFDD0 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF1B299B9EFD00BEFDD0 /* Collections.swift */; };
+		1D94CF25299B9EFD00BEFDD0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF1C299B9EFD00BEFDD0 /* UIView.swift */; };
 		1DFFC3BA299B923100F8FD2B /* AKHelpers.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1DFFC3B9299B923100F8FD2B /* AKHelpers.docc */; };
 		1DFFC3C0299B923200F8FD2B /* AKHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DFFC3B5299B923100F8FD2B /* AKHelpers.framework */; };
 		1DFFC3C5299B923200F8FD2B /* AKHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFFC3C4299B923200F8FD2B /* AKHelpersTests.swift */; };
@@ -26,6 +35,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D94CF14299B9EFC00BEFDD0 /* Calls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calls.swift; sourceTree = "<group>"; };
+		1D94CF15299B9EFC00BEFDD0 /* EdgeInsets+Navigationbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Navigationbar.swift"; sourceTree = "<group>"; };
+		1D94CF16299B9EFC00BEFDD0 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		1D94CF17299B9EFC00BEFDD0 /* Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swizzle.swift; sourceTree = "<group>"; };
+		1D94CF18299B9EFC00BEFDD0 /* TableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViews.swift; sourceTree = "<group>"; };
+		1D94CF19299B9EFC00BEFDD0 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		1D94CF1A299B9EFD00BEFDD0 /* CollectionViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViews.swift; sourceTree = "<group>"; };
+		1D94CF1B299B9EFD00BEFDD0 /* Collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
+		1D94CF1C299B9EFD00BEFDD0 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		1DFFC3B5299B923100F8FD2B /* AKHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AKHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DFFC3B8299B923100F8FD2B /* AKHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKHelpers.h; sourceTree = "<group>"; };
 		1DFFC3B9299B923100F8FD2B /* AKHelpers.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = AKHelpers.docc; sourceTree = "<group>"; };
@@ -92,6 +110,15 @@
 		1DFFC3B7299B923100F8FD2B /* AKHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				1D94CF14299B9EFC00BEFDD0 /* Calls.swift */,
+				1D94CF1B299B9EFD00BEFDD0 /* Collections.swift */,
+				1D94CF1A299B9EFD00BEFDD0 /* CollectionViews.swift */,
+				1D94CF15299B9EFC00BEFDD0 /* EdgeInsets+Navigationbar.swift */,
+				1D94CF16299B9EFC00BEFDD0 /* Gradient.swift */,
+				1D94CF19299B9EFC00BEFDD0 /* Navigation.swift */,
+				1D94CF17299B9EFC00BEFDD0 /* Swizzle.swift */,
+				1D94CF18299B9EFC00BEFDD0 /* TableViews.swift */,
+				1D94CF1C299B9EFD00BEFDD0 /* UIView.swift */,
 			);
 			path = AKHelpers;
 			sourceTree = "<group>";
@@ -130,7 +157,6 @@
 				C3553BCCF8FD7CB7C1072F3B /* Pods-AKHelpers-AKHelpersTests.debug.xcconfig */,
 				4C4A26C1B73B979A3175B145 /* Pods-AKHelpers-AKHelpersTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -292,7 +318,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D94CF25299B9EFD00BEFDD0 /* UIView.swift in Sources */,
+				1D94CF1E299B9EFD00BEFDD0 /* EdgeInsets+Navigationbar.swift in Sources */,
+				1D94CF21299B9EFD00BEFDD0 /* TableViews.swift in Sources */,
+				1D94CF23299B9EFD00BEFDD0 /* CollectionViews.swift in Sources */,
+				1D94CF22299B9EFD00BEFDD0 /* Navigation.swift in Sources */,
 				1DFFC3BA299B923100F8FD2B /* AKHelpers.docc in Sources */,
+				1D94CF20299B9EFD00BEFDD0 /* Swizzle.swift in Sources */,
+				1D94CF24299B9EFD00BEFDD0 /* Collections.swift in Sources */,
+				1D94CF1D299B9EFD00BEFDD0 /* Calls.swift in Sources */,
+				1D94CF1F299B9EFD00BEFDD0 /* Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C3553BCCF8FD7CB7C1072F3B /* Pods-AKHelpers-AKHelpersTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S84559HK9V;
@@ -516,6 +552,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4C4A26C1B73B979A3175B145 /* Pods-AKHelpers-AKHelpersTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S84559HK9V;
