@@ -7,9 +7,9 @@
 
 import UIKit
 
-public extension UIView {
+extension UIView {
     /// Default value for the _.xib_ file name usually used.
-    class var nibName: String {
+    open class var nibName: String {
         String(describing: self)
     }
     
@@ -18,11 +18,11 @@ public extension UIView {
     ///   - bundle: The bundle where the class is located.
     ///   - nibName: The name of the nib file, this is the class name by default.
     /// - Returns: The loaded view.
-    class func loadXib(bundle: Bundle = .main, nibName: String = nibName) -> Self? {
+    open class func loadXib(bundle: Bundle = .main, nibName: String = nibName) -> Self? {
         bundle.loadNibNamed(nibName, owner: self, options: nil)?.first as? Self
     }
 
-    @IBInspectable var cornerRadius: CGFloat {
+    @IBInspectable open var cornerRadius: CGFloat {
         get {
             layer.cornerRadius
         }
@@ -31,7 +31,7 @@ public extension UIView {
         }
     }
 
-    @IBInspectable var borderWidth: CGFloat {
+    @IBInspectable open var borderWidth: CGFloat {
         get {
             layer.borderWidth
         }
@@ -40,7 +40,7 @@ public extension UIView {
         }
     }
 
-    @IBInspectable var borderColor: UIColor? {
+    @IBInspectable open var borderColor: UIColor? {
         get {
             guard let borderColor = layer.borderColor else { return nil }
             return UIColor(cgColor: borderColor)
@@ -51,7 +51,7 @@ public extension UIView {
     }
 
     /// Sets clipsToBounds property to true.
-    @discardableResult func clipedToBounds() -> Self {
+    @discardableResult public func clipedToBounds() -> Self {
         clipsToBounds = true
         return self
     }
@@ -61,9 +61,9 @@ public extension UIView {
     ///   - corners: Corners to be rounded.
     ///   - radius: If not provided, the corners radius value will be half of the view height.
     /// - Returns: The same view with its corners rounded.
-    @discardableResult func withRounded(
+    @discardableResult public func withRounded(
         corners: UIRectCorner = .allCorners,
-        andRadius radius: CGFloat? = nil
+        radius: CGFloat? = nil
     ) -> Self {
         let radius = radius ?? frame.size.height / 2
         guard corners != .allCorners else {
@@ -82,9 +82,9 @@ public extension UIView {
     }
 
     /// Adds a border to the view with the given line width and color.
-    @discardableResult func bordered(
+    @discardableResult public func bordered(
         with borderWidth: CGFloat = 1.0,
-        andColor borderColor: UIColor
+        color borderColor: UIColor
     ) -> Self {
         layer.borderWidth = borderWidth
         layer.borderColor = borderColor.cgColor
@@ -92,7 +92,7 @@ public extension UIView {
     }
 
     /// Shadows the view with the given parameters.
-    @discardableResult func shadowed(
+    @discardableResult public func shadowed(
         with color: UIColor,
         radius: CGFloat,
         offset: CGSize,
@@ -106,13 +106,13 @@ public extension UIView {
         return self
     }
 
-    @discardableResult func shadowRemoved() -> Self {
+    @discardableResult public func shadowRemoved() -> Self {
         layer.shadowColor = UIColor.clear.cgColor
         return self
     }
 
     /// Add another view as subview and constraints the added view to the edges.
-    func embed(_ view: UIView) {
+    public func embed(_ view: UIView) {
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -124,7 +124,7 @@ public extension UIView {
     }
 
     /// Add another view as subview and constraints the added view to the edges of the safe area.
-    func embedWithSafeArea(_ view: UIView) {
+    public func embedWithSafeArea(_ view: UIView) {
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
