@@ -19,7 +19,7 @@ public extension UIEdgeInsets {
     }
 }
 
-extension UINavigationBar {
+public extension UINavigationBar {
     func makeTransparent() {
         setBackgroundImage(UIImage(), for: .default)
         shadowImage = UIImage()
@@ -28,7 +28,7 @@ extension UINavigationBar {
     }
 }
 
-extension UINavigationController {
+public extension UINavigationController {
     func makeNavigationBarTransparent() {
         navigationBar.makeTransparent()
     }
