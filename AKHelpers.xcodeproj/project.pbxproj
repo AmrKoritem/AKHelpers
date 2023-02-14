@@ -11,6 +11,8 @@
 		1DFFC3C0299B923200F8FD2B /* AKHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DFFC3B5299B923100F8FD2B /* AKHelpers.framework */; };
 		1DFFC3C5299B923200F8FD2B /* AKHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFFC3C4299B923200F8FD2B /* AKHelpersTests.swift */; };
 		1DFFC3C6299B923200F8FD2B /* AKHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DFFC3B8299B923100F8FD2B /* AKHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FB428E1D28CA9000AF54A38 /* Pods_AKHelpers_AKHelpersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1456FE20AA6B10C56D3C85 /* Pods_AKHelpers_AKHelpersTests.framework */; };
+		7359E2781DAE8AC99E75DAD9 /* Pods_AKHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34231BF21A9377759019F4D4 /* Pods_AKHelpers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,12 @@
 		1DFFC3B9299B923100F8FD2B /* AKHelpers.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = AKHelpers.docc; sourceTree = "<group>"; };
 		1DFFC3BF299B923200F8FD2B /* AKHelpersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AKHelpersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DFFC3C4299B923200F8FD2B /* AKHelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHelpersTests.swift; sourceTree = "<group>"; };
+		22D5C25B3C6254598B655E7F /* Pods-AKHelpers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKHelpers.debug.xcconfig"; path = "Target Support Files/Pods-AKHelpers/Pods-AKHelpers.debug.xcconfig"; sourceTree = "<group>"; };
+		34231BF21A9377759019F4D4 /* Pods_AKHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C4A26C1B73B979A3175B145 /* Pods-AKHelpers-AKHelpersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKHelpers-AKHelpersTests.release.xcconfig"; path = "Target Support Files/Pods-AKHelpers-AKHelpersTests/Pods-AKHelpers-AKHelpersTests.release.xcconfig"; sourceTree = "<group>"; };
+		5CFF84F8A1DC76B3939105F8 /* Pods-AKHelpers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKHelpers.release.xcconfig"; path = "Target Support Files/Pods-AKHelpers/Pods-AKHelpers.release.xcconfig"; sourceTree = "<group>"; };
+		C3553BCCF8FD7CB7C1072F3B /* Pods-AKHelpers-AKHelpersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKHelpers-AKHelpersTests.debug.xcconfig"; path = "Target Support Files/Pods-AKHelpers-AKHelpersTests/Pods-AKHelpers-AKHelpersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA1456FE20AA6B10C56D3C85 /* Pods_AKHelpers_AKHelpersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKHelpers_AKHelpersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7359E2781DAE8AC99E75DAD9 /* Pods_AKHelpers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +53,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DFFC3C0299B923200F8FD2B /* AKHelpers.framework in Frameworks */,
+				3FB428E1D28CA9000AF54A38 /* Pods_AKHelpers_AKHelpersTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1582F05766C194A3C30AD5E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34231BF21A9377759019F4D4 /* Pods_AKHelpers.framework */,
+				EA1456FE20AA6B10C56D3C85 /* Pods_AKHelpers_AKHelpersTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1DFFC3AB299B923100F8FD2B = {
 			isa = PBXGroup;
 			children = (
-				1DFFC3B7299B923100F8FD2B /* AKHelpers */,
-				1DFFC3C3299B923200F8FD2B /* AKHelpersTests */,
+				1DFFC3D0299B92A500F8FD2B /* Sources */,
+				1DFFC3CF299B929A00F8FD2B /* Tests */,
 				1DFFC3B6299B923100F8FD2B /* Products */,
+				7BCDE2B8AA200737A1E93123 /* Pods */,
+				1582F05766C194A3C30AD5E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +92,6 @@
 		1DFFC3B7299B923100F8FD2B /* AKHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				1DFFC3B8299B923100F8FD2B /* AKHelpers.h */,
-				1DFFC3B9299B923100F8FD2B /* AKHelpers.docc */,
 			);
 			path = AKHelpers;
 			sourceTree = "<group>";
@@ -83,6 +102,36 @@
 				1DFFC3C4299B923200F8FD2B /* AKHelpersTests.swift */,
 			);
 			path = AKHelpersTests;
+			sourceTree = "<group>";
+		};
+		1DFFC3CF299B929A00F8FD2B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1DFFC3C3299B923200F8FD2B /* AKHelpersTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		1DFFC3D0299B92A500F8FD2B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1DFFC3B7299B923100F8FD2B /* AKHelpers */,
+				1DFFC3B8299B923100F8FD2B /* AKHelpers.h */,
+				1DFFC3B9299B923100F8FD2B /* AKHelpers.docc */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7BCDE2B8AA200737A1E93123 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22D5C25B3C6254598B655E7F /* Pods-AKHelpers.debug.xcconfig */,
+				5CFF84F8A1DC76B3939105F8 /* Pods-AKHelpers.release.xcconfig */,
+				C3553BCCF8FD7CB7C1072F3B /* Pods-AKHelpers-AKHelpersTests.debug.xcconfig */,
+				4C4A26C1B73B979A3175B145 /* Pods-AKHelpers-AKHelpersTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +152,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DFFC3C9299B923200F8FD2B /* Build configuration list for PBXNativeTarget "AKHelpers" */;
 			buildPhases = (
+				A1709DA1695470AED9069F2A /* [CP] Check Pods Manifest.lock */,
 				1DFFC3B0299B923100F8FD2B /* Headers */,
 				1DFFC3B1299B923100F8FD2B /* Sources */,
 				1DFFC3B2299B923100F8FD2B /* Frameworks */,
@@ -121,6 +171,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DFFC3CC299B923200F8FD2B /* Build configuration list for PBXNativeTarget "AKHelpersTests" */;
 			buildPhases = (
+				AECC872D1CC381B779DBFF7A /* [CP] Check Pods Manifest.lock */,
 				1DFFC3BB299B923200F8FD2B /* Sources */,
 				1DFFC3BC299B923200F8FD2B /* Frameworks */,
 				1DFFC3BD299B923200F8FD2B /* Resources */,
@@ -188,6 +239,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A1709DA1695470AED9069F2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AKHelpers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AECC872D1CC381B779DBFF7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AKHelpers-AKHelpersTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1DFFC3B1299B923100F8FD2B /* Sources */ = {
@@ -339,6 +437,7 @@
 		};
 		1DFFC3CA299B923200F8FD2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22D5C25B3C6254598B655E7F /* Pods-AKHelpers.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -350,6 +449,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,6 +467,7 @@
 		};
 		1DFFC3CB299B923200F8FD2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CFF84F8A1DC76B3939105F8 /* Pods-AKHelpers.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -378,6 +479,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,6 +497,7 @@
 		};
 		1DFFC3CD299B923200F8FD2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3553BCCF8FD7CB7C1072F3B /* Pods-AKHelpers-AKHelpersTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -411,6 +514,7 @@
 		};
 		1DFFC3CE299B923200F8FD2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C4A26C1B73B979A3175B145 /* Pods-AKHelpers-AKHelpersTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
