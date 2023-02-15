@@ -4,7 +4,7 @@ s.name = "AKHelpers"
 s.summary = "AKHelpers is the foundation extensions used for AK works."
 s.requires_arc = true
 
-s.version = "1.0.0"
+s.version = "2.0.0"
 s.license = { :type => "MIT", :file => "LICENSE" }
 s.author = { "Amr Koritem" => "amr.koritem92@gmail.com" }
 s.homepage = "https://github.com/AmrKoritem/AKHelpers"
