@@ -18,7 +18,7 @@ pod 'AKHelpers'
 You can also install it using [swift package manager](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app) as well.
 ```swift
 dependencies: [
-    .package(url: "https://github.com/AmrKoritem/AKHelpers.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/AmrKoritem/AKHelpers.git", .upToNextMajor(from: "2.0.1"))
 ]
 ```
 

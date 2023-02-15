@@ -18,8 +18,13 @@ extension UIView {
     ///   - bundle: The bundle where the class is located.
     ///   - nibName: The name of the nib file, this is the class name by default.
     /// - Returns: The loaded view.
-    open class func loadXib(bundle: Bundle = .main, nibName: String = nibName) -> Self? {
-        bundle.loadNibNamed(nibName, owner: self, options: nil)?.first as? Self
+    open class func loadXib(
+        bundle: Bundle? = .main,
+        nibName: String? = nil,
+        owner: Any? = nil,
+        options: [UINib.OptionsKey: Any]? = nil
+    ) -> Self? {
+        bundle?.loadNibNamed(nibName ?? Self.nibName, owner: owner, options: options)?.first as? Self
     }
 
     @IBInspectable open var cornerRadius: CGFloat {
