@@ -68,14 +68,35 @@ public extension UIViewController {
 
 // MARK: - Backward navigation functions
 public extension UIViewController {
-    /// Function that pops the view controller if it had a navigation controller.
-    @objc func back(animated: Bool = true) {
+    /// Pops view controllers until the one specified. Returns the popped controllers.
+    @discardableResult func back(
+        to viewController: UIViewController,
+        animated: Bool = true
+    ) -> [UIViewController]? {
+        navigationController?.popToViewController(viewController, animated: animated)
+    }
+
+    /// Pops view controllers until the one with the specified class.
+    func back<T: UIViewController>(
+        to viewController: T.Type,
+        animated: Bool = true
+    ) {
+        guard let viewControllers = navigationController?.viewControllers,
+              let destinationVC = viewControllers.filter({ $0 is T }).last else { return }
+        back(to: destinationVC, animated: animated)
+    }
+
+    /// Function that pops the view controller if it had a navigation controller. Returns the poped view controller.
+    @discardableResult @objc func back(animated: Bool = true) -> UIViewController? {
         navigationController?.popViewController(animated: animated)
     }
 
     /// Function that dismisses the view controller if it was presented, else it will attempt to pop it if it had a navigation controller.
     @objc func close(animated: Bool = true) {
-        guard isPresented else { return back() }
+        guard isPresented else {
+            back()
+            return
+        }
         dismiss(animated: animated)
     }
 }
