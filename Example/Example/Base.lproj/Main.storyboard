@@ -142,11 +142,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxF-XQ-eT0">
+                                <rect key="frame" x="136" y="413.5" width="142" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="present view as alert"/>
+                                <connections>
+                                    <action selector="presentAlert" destination="eNd-YZ-Txi" eventType="touchUpInside" id="Wr5-2H-TyT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nc7-2e-m4P">
+                                <rect key="frame" x="132.5" y="723" width="149" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="present view as sheet"/>
+                                <connections>
+                                    <action selector="presentSheet" destination="eNd-YZ-Txi" eventType="touchUpInside" id="QoA-9t-phG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7KU-gB-JTl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="nc7-2e-m4P" firstAttribute="centerX" secondItem="7KU-gB-JTl" secondAttribute="centerX" id="1FS-yR-f1M"/>
+                            <constraint firstItem="DxF-XQ-eT0" firstAttribute="centerX" secondItem="7KU-gB-JTl" secondAttribute="centerX" id="4yZ-w3-52S"/>
                             <constraint firstItem="spv-MF-BqP" firstAttribute="leading" secondItem="7KU-gB-JTl" secondAttribute="leading" constant="30" id="5GA-6B-AMj"/>
+                            <constraint firstItem="7KU-gB-JTl" firstAttribute="bottom" secondItem="nc7-2e-m4P" secondAttribute="bottom" constant="60" id="FbX-jz-sPR"/>
+                            <constraint firstItem="DxF-XQ-eT0" firstAttribute="centerY" secondItem="7KU-gB-JTl" secondAttribute="centerY" id="QD9-Rm-17M"/>
                             <constraint firstItem="spv-MF-BqP" firstAttribute="top" secondItem="7KU-gB-JTl" secondAttribute="top" constant="40" id="URO-ai-8CK"/>
                         </constraints>
                     </view>
@@ -157,6 +177,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ic-xd-fvg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="887" y="1002"/>
+        </scene>
+        <!--Presented View Controller-->
+        <scene sceneID="PWI-VC-BLL">
+            <objects>
+                <viewController storyboardIdentifier="PresentedViewController" id="KfR-R6-sF2" customClass="PresentedViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qv3-Ca-gik">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AKHelpers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnk-A5-yUj">
+                                <rect key="frame" x="138" y="435" width="138.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.79607843140000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ARl-Hk-pfp"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <constraints>
+                            <constraint firstItem="Lnk-A5-yUj" firstAttribute="centerX" secondItem="ARl-Hk-pfp" secondAttribute="centerX" id="K2z-8o-AfU"/>
+                            <constraint firstItem="Lnk-A5-yUj" firstAttribute="centerY" secondItem="ARl-Hk-pfp" secondAttribute="centerY" id="N83-kE-UeR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aau-b6-XHr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1858" y="1002"/>
         </scene>
         <!--Second-->
         <scene sceneID="kmv-7W-neO">
@@ -203,6 +250,9 @@
         <image name="arrowshape.zigzag.forward.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

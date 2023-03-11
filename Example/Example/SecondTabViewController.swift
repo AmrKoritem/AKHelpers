@@ -7,4 +7,14 @@
 
 import UIKit
 
-class SecondTabViewController: UIViewController {}
+class SecondTabViewController: UIViewController {
+    @IBAction func presentAlert() {
+        guard let pvc = storyboard?.instantiate(viewController: PresentedViewController.self) else { return }
+        presentInMiddleOfScreen(pvc)
+    }
+
+    @IBAction func presentSheet() {
+        guard let pvc = storyboard?.instantiate(viewController: PresentedViewController.self) else { return }
+        presentAsSheet(viewController: pvc, height: 200, isDismissEnabled: true, cornerRadius: 20)
+    }
+}
