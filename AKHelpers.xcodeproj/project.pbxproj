@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D7A3DCA29BB986500A9C556 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7A3DC929BB986500A9C556 /* UIViewController+Navigation.swift */; };
+		1D7A3DCC29BB998F00A9C556 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7A3DCB29BB998F00A9C556 /* SheetViewController.swift */; };
 		1D94CF1D299B9EFD00BEFDD0 /* Calls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF14299B9EFC00BEFDD0 /* Calls.swift */; };
 		1D94CF1E299B9EFD00BEFDD0 /* EdgeInsets+Navigationbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF15299B9EFC00BEFDD0 /* EdgeInsets+Navigationbar.swift */; };
 		1D94CF1F299B9EFD00BEFDD0 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF16299B9EFC00BEFDD0 /* Gradient.swift */; };
 		1D94CF20299B9EFD00BEFDD0 /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF17299B9EFC00BEFDD0 /* Swizzle.swift */; };
 		1D94CF21299B9EFD00BEFDD0 /* TableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF18299B9EFC00BEFDD0 /* TableViews.swift */; };
-		1D94CF22299B9EFD00BEFDD0 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF19299B9EFC00BEFDD0 /* Navigation.swift */; };
+		1D94CF22299B9EFD00BEFDD0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF19299B9EFC00BEFDD0 /* Utilities.swift */; };
 		1D94CF23299B9EFD00BEFDD0 /* CollectionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF1A299B9EFD00BEFDD0 /* CollectionViews.swift */; };
 		1D94CF24299B9EFD00BEFDD0 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF1B299B9EFD00BEFDD0 /* Collections.swift */; };
 		1D94CF25299B9EFD00BEFDD0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94CF1C299B9EFD00BEFDD0 /* UIView.swift */; };
@@ -35,12 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D7A3DC929BB986500A9C556 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
+		1D7A3DCB29BB998F00A9C556 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		1D94CF14299B9EFC00BEFDD0 /* Calls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calls.swift; sourceTree = "<group>"; };
 		1D94CF15299B9EFC00BEFDD0 /* EdgeInsets+Navigationbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Navigationbar.swift"; sourceTree = "<group>"; };
 		1D94CF16299B9EFC00BEFDD0 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		1D94CF17299B9EFC00BEFDD0 /* Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swizzle.swift; sourceTree = "<group>"; };
 		1D94CF18299B9EFC00BEFDD0 /* TableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViews.swift; sourceTree = "<group>"; };
-		1D94CF19299B9EFC00BEFDD0 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		1D94CF19299B9EFC00BEFDD0 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		1D94CF1A299B9EFD00BEFDD0 /* CollectionViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViews.swift; sourceTree = "<group>"; };
 		1D94CF1B299B9EFD00BEFDD0 /* Collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
 		1D94CF1C299B9EFD00BEFDD0 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1D7A3DC829BB974800A9C556 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				1D94CF19299B9EFC00BEFDD0 /* Utilities.swift */,
+				1D7A3DC929BB986500A9C556 /* UIViewController+Navigation.swift */,
+				1D7A3DCB29BB998F00A9C556 /* SheetViewController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		1DFFC3AB299B923100F8FD2B = {
 			isa = PBXGroup;
 			children = (
@@ -110,12 +124,12 @@
 		1DFFC3B7299B923100F8FD2B /* AKHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				1D7A3DC829BB974800A9C556 /* Navigation */,
 				1D94CF14299B9EFC00BEFDD0 /* Calls.swift */,
 				1D94CF1B299B9EFD00BEFDD0 /* Collections.swift */,
 				1D94CF1A299B9EFD00BEFDD0 /* CollectionViews.swift */,
 				1D94CF15299B9EFC00BEFDD0 /* EdgeInsets+Navigationbar.swift */,
 				1D94CF16299B9EFC00BEFDD0 /* Gradient.swift */,
-				1D94CF19299B9EFC00BEFDD0 /* Navigation.swift */,
 				1D94CF17299B9EFC00BEFDD0 /* Swizzle.swift */,
 				1D94CF18299B9EFC00BEFDD0 /* TableViews.swift */,
 				1D94CF1C299B9EFD00BEFDD0 /* UIView.swift */,
@@ -318,16 +332,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D7A3DCC29BB998F00A9C556 /* SheetViewController.swift in Sources */,
 				1D94CF25299B9EFD00BEFDD0 /* UIView.swift in Sources */,
 				1D94CF1E299B9EFD00BEFDD0 /* EdgeInsets+Navigationbar.swift in Sources */,
 				1D94CF21299B9EFD00BEFDD0 /* TableViews.swift in Sources */,
 				1D94CF23299B9EFD00BEFDD0 /* CollectionViews.swift in Sources */,
-				1D94CF22299B9EFD00BEFDD0 /* Navigation.swift in Sources */,
+				1D94CF22299B9EFD00BEFDD0 /* Utilities.swift in Sources */,
 				1DFFC3BA299B923100F8FD2B /* AKHelpers.docc in Sources */,
 				1D94CF20299B9EFD00BEFDD0 /* Swizzle.swift in Sources */,
 				1D94CF24299B9EFD00BEFDD0 /* Collections.swift in Sources */,
 				1D94CF1D299B9EFD00BEFDD0 /* Calls.swift in Sources */,
 				1D94CF1F299B9EFD00BEFDD0 /* Gradient.swift in Sources */,
+				1D7A3DCA29BB986500A9C556 /* UIViewController+Navigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

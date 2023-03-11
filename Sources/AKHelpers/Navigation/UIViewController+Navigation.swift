@@ -1,23 +1,11 @@
 //
-//  Navigation.swift
+//  UIViewController+Navigation.swift
 //  AKHelpers
 //
-//  Created by Amr Koritem on 10/02/2023.
+//  Created by Amr Koritem on 10/03/2023.
 //
 
 import UIKit
-
-// MARK: - Instantiation of view controllers
-public extension UIStoryboard {
-    /// The storyboard id of this view controller exactly as the view controller class name, else it won't work.
-    func instantiate<T: UIViewController>(viewController: T.Type) -> T {
-        instantiateViewController(withIdentifier: T.storyboardId) as? T ?? T()
-    }
-
-    func instantiate<T: UIViewController>(withIdentifier storyboardId: String) -> T {
-        instantiateViewController(withIdentifier: storyboardId) as? T ?? T()
-    }
-}
 
 public extension UIViewController {
     /// Default value for the storyboard identifier usually used.
@@ -123,30 +111,56 @@ public extension UIViewController {
         present(viewController, animated: animated)
     }
 
-    @available(iOS 15.0, *)
-    @available(tvOS, unavailable)
+    /// Presents the given view controller as a sheet.
+    /// - Parameters:
+    ///   - view: Presented view.
+    ///   - height: Sheet height.
+    ///   - isDismissEnabled: When true, you will be able to dismiss the sheet by tapping outside it.
+    ///   - cornerRadius: Sheet corner radius.
+    ///   - alphaOfBackgroundViews: Darkens the views under the presented view controller when less than 1.
+    ///   - animated: Determines if the presentation is animated.
+    func presentAsSheet(
+        view: UIView,
+        height: CGFloat? = nil,
+        isDismissEnabled: Bool = false,
+        cornerRadius: CGFloat = 20,
+        delegate: SheetViewControllerDelegate? = nil,
+        animated: Bool = true
+    ) {
+        let svc = SheetViewController(
+            height: height,
+            isDismissEnabled: isDismissEnabled,
+            cornerRadius: cornerRadius,
+            delegate: delegate ?? self)
+        svc.embededView = view
+        present(svc, animated: true)
+    }
+
     /// Presents the given view controller as a sheet.
     /// - Parameters:
     ///   - viewController: Presented view controller.
-    ///   - detents: Sheet detents. Must have at least one element.
-    ///   - isDismissEnabled: When true, the presentation will prevent interactive dismiss and ignore events outside of the presented view controller's bounds.
-    ///   - preferredCornerRadius: This value is only respected when the sheet is at the front of its stack.
+    ///   - height: Sheet height.
+    ///   - isDismissEnabled: When true, you will be able to dismiss the sheet by tapping outside it.
+    ///   - cornerRadius: Sheet corner radius.
+    ///   - alphaOfBackgroundViews: Darkens the views under the presented view controller when less than 1.
     ///   - animated: Determines if the presentation is animated.
     func presentAsSheet(
         viewController: UIViewController,
-        detents: [UISheetPresentationController.Detent] = [.medium()],
+        height: CGFloat? = nil,
         isDismissEnabled: Bool = false,
-        preferredCornerRadius: CGFloat = 0,
+        cornerRadius: CGFloat = 20,
+        delegate: SheetViewControllerDelegate? = nil,
         animated: Bool = true
     ) {
-        let navigationController = viewController as? UINavigationController
-        let navC = navigationController ?? UINavigationController(rootViewController: viewController)
-        present(
-            navC.prepareSheetWith(
-                detents: detents,
-                isDismissEnabled: isDismissEnabled,
-                preferredCornerRadius: preferredCornerRadius),
-            animated: animated)
+        let svc = SheetViewController(
+            height: height,
+            isDismissEnabled: isDismissEnabled,
+            cornerRadius: cornerRadius,
+            delegate: delegate ?? self)
+        svc.addChild(viewController)
+        svc.embededView = viewController.view
+        viewController.didMove(toParent: svc)
+        present(svc, animated: true)
     }
 }
 
@@ -161,7 +175,7 @@ public extension UIViewController {
     func presentInMiddleOfScreen(
         _ popoverContentController: UIViewController,
         preferredContentSize: CGSize? = nil,
-        popoverPresentationControllerDelegate: UIPopoverPresentationControllerDelegate? = nil,
+        delegate: UIPopoverPresentationControllerDelegate? = nil,
         animated: Bool = true
     ) {
         popoverContentController.modalPresentationStyle = .popover
@@ -172,7 +186,7 @@ public extension UIViewController {
         popoverPresentationController.sourceView = view
         let sourceRect = view.bounds
         popoverPresentationController.sourceRect = CGRect(x: sourceRect.midX, y: sourceRect.midY, width: 0, height: 0)
-        popoverPresentationController.delegate = popoverPresentationControllerDelegate ?? self
+        popoverPresentationController.delegate = delegate ?? self
         present(popoverContentController, animated: animated)
     }
 
@@ -201,11 +215,21 @@ extension UIViewController {
     
     /// Darkens the views under the presented view controller according to _alpha_ parameter value.
     /// - Parameter alpha: Its value should be within 0.0 : 1.0 . Values below 1 will darken the screen.
-    public func setAlphaOfBackgroundViews(alpha: CGFloat) {
+    public func setBackgroundViewsAlpha(alpha: CGFloat) {
         UIView.animate(withDuration: 0.2) { [weak self] in
             self?.view.alpha = alpha
             self?.navigationController?.navigationBar.alpha = alpha
         }
+    }
+}
+
+extension UIViewController: SheetViewControllerDelegate {
+    open func prepareForSheetPresentation() {
+        setBackgroundViewsAlpha(alpha: 0.5)
+    }
+
+    open func sheetPresentationControllerDidDismissPopover() {
+        setBackgroundViewsAlpha(alpha: 1)
     }
 }
 
@@ -218,13 +242,11 @@ extension UIViewController: UIPopoverPresentationControllerDelegate {
 
     // MARK: - UIPopoverPresentationControllerDelegate
     open func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
-        setAlphaOfBackgroundViews(alpha: 0.2)
+        setBackgroundViewsAlpha(alpha: 0.5)
     }
 
-    open func popoverPresentationControllerDidDismissPopover(
-        _ popoverPresentationController: UIPopoverPresentationController
-    ) {
-        setAlphaOfBackgroundViews(alpha: 1)
+    open func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+        setBackgroundViewsAlpha(alpha: 1)
     }
 
     open func popoverPresentationControllerShouldDismissPopover(
@@ -232,74 +254,4 @@ extension UIViewController: UIPopoverPresentationControllerDelegate {
     ) -> Bool {
         true
     }
-}
-
-public extension UIModalPresentationStyle {
-    /// Typically used with `UIViewController.navigateTo(_:presentationStyle:transitionStyle:animated:)` when iOS versions below 13.0 is supported to make the method navigates using _present_ instead of _show_ .
-    static var automaticAllVersions: UIModalPresentationStyle {
-        guard #available(iOS 13.0, tvOS 13.0, *) else { return .fullScreen }
-        return .automatic
-    }
-}
-
-@available(iOS 15.0, *)
-@available(tvOS, unavailable)
-public extension UINavigationController {
-    /// Prepares the navigation controller to be presented as a sheet.
-    /// - Parameters:
-    ///   - detents: Sheet detents. Must have at least one element.
-    ///   - isDismissEnabled: When true, the presentation will prevent interactive dismiss and ignore events outside of the presented view controller's bounds.
-    ///   - preferredCornerRadius: This value is only respected when the sheet is at the front of its stack.
-    func prepareSheetWith(
-        detents: [UISheetPresentationController.Detent] = [.medium()],
-        isDismissEnabled: Bool = false,
-        preferredCornerRadius: CGFloat = 0
-    ) -> Self {
-        setValue(!isDismissEnabled, forKey: "isModalInPresentation")
-        let sheet = sheetPresentationController
-        sheet?.detents = detents
-        sheet?.largestUndimmedDetentIdentifier = .large
-        sheet?.setValue(preferredCornerRadius, forKey: "preferredCornerRadius")
-        return self
-    }
-}
-
-public extension UIApplication {
-    /// The current root window.
-    static var rootWindow: UIWindow? {
-        guard #available(iOS 13, tvOS 13.0, *) else {
-            return UIApplication.shared.windows.first(where: { $0.isKeyWindow })
-        }
-        return UIApplication.shared.connectedScenes
-            .filter { $0.activationState == .foregroundActive }
-            .first(where: { $0 is UIWindowScene })
-            .flatMap({ $0 as? UIWindowScene })?.windows
-            .first(where: \.isKeyWindow)
-    }
-
-    /// The current root view controller.
-    static var rootViewController: UIViewController? {
-        rootWindow?.rootViewController
-    }
-
-    /// Gets you the top most view controller.
-    class func topViewController(
-        controller: UIViewController? = UIApplication.rootViewController
-    ) -> UIViewController? {
-        switch controller {
-        case is UINavigationController:
-            return topViewController(controller: (controller as? UINavigationController)?.visibleViewController)
-        case is UITabBarController:
-            return topViewController(controller: (controller as? UITabBarController)?.selectedViewController)
-        default:
-            return controller?.presentedViewController ?? controller
-        }
-    }
-}
-
-precedencegroup OptionalAssignment { associativity: right }
-infix operator ?= : OptionalAssignment
-func ?= <T: Any> ( left: inout T, right: T?) {
-    guard let right = right else { return }
-    left = right
 }
